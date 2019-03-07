@@ -54,7 +54,7 @@ students.selectAll("circle")
         .data(function(d){return d.grades})
         .enter()
         .append("circle")
-        .attr("cx",function(d){return xScale(i)})
+        .attr("cx",function(d,i){return xScale(i)})
         .attr("cy",function(d){return yScale(d)})
         .attr("r",10)
  //The Legend...
