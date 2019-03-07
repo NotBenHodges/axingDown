@@ -58,8 +58,8 @@ students.selectAll("circle")
         .attr("cy",function(d){return yScale(d)})
         .attr("r",10)
  //The Legend...
-var legend = svg.append("legend")
-                .classed("legend",true)
+var legend = svg.append("g")
+                .classed("g",true)
                 .attr("transform","translate("+(width+margins.left)+","+margins.top+")");
 
 var legendLines = legend.selectAll("g")
@@ -67,7 +67,7 @@ var legendLines = legend.selectAll("g")
                         .enter()
                         .append("g")
                         .classed("legendLine",true)
-                        .attr("transform",function(d,i){return "translate(0,"+i*12+")";})
+                        .attr("transform",function(d,i){return "translate(0,"+(i*12)+")";})
 
 legendLines.append("rect")
             .attr("x",0)
