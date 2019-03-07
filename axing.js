@@ -48,7 +48,7 @@ var students = plotLand.selectAll("g")
                         .data(data)
                         .enter()
                         .append("g")
-                        .attr("fill",function(d){return colors(d.colors)});
+                        .attr("fill",function(d){return colors(d.name)});
 
 students.selectAll("circle")
         .data(function(d){return d.grades})
@@ -58,8 +58,8 @@ students.selectAll("circle")
         .attr("cy",function(d){return yScale(d)})
         .attr("r",10)
  //The Legend...
-var legend = svg.append("legend")
-                .classed("legend",true)
+var legend = svg.append("g")
+                .classed("Legend",true)
                 .attr("transform","translate("+(width+margins.left)+","+margins.top+")");
 
 var legendLines = legend.selectAll("g")
@@ -67,7 +67,7 @@ var legendLines = legend.selectAll("g")
                         .enter()
                         .append("g")
                         .classed("legendLine",true)
-                        .attr("transform",function(d,i){return "translate(0,"+i*12+")";})
+                        .attr("transform",function(d,i){return "translate(0,"+(i*12)+")";})
 
 legendLines.append("rect")
             .attr("x",0)
