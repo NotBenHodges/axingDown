@@ -1,4 +1,4 @@
-var gradesP = d3.json("data/gradeData.json");
+var gradesP = d3.json("gradeData.json");
 
 gradesP.then(function(data)
 {
@@ -58,7 +58,7 @@ students.selectAll("circle")
         .attr("cy",function(d){return yScale(d)})
         .attr("r",10)
  //The Legend...
-var legend = sbg.append("legend")
+var legend = svg.append("legend")
                 .classed("legend",true)
                 .attr("transform","translate("+(width+margins.left)+","+margins.top+")");
 
