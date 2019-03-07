@@ -41,7 +41,7 @@ var colors = d3.scaleOrdinal(d3.schemeAccent);
 //plot Land
 var plotLand = svg.append("g")
                   .classed("plot",true)
-                  .attr("transform","translate("+ margins.left + "," + margins.top")");
+                  .attr("transform","translate("+ margins.left + "," + margins.top+")");
 
 
 var students = plotLand.selectAll("g")
