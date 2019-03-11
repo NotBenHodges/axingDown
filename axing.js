@@ -2,22 +2,22 @@ var gradesP = d3.json("gradeData.json");
 
 gradesP.then(function(data)
 {
-  drawGraph(data,500,400);
-  drawGraph(data,300,200);
-  drawGraph(data,600,500);
+  drawGraph(data,500,400,"svg#num1");
+  drawGraph(data,300,200,"svg#num2");
+  drawGraph(data,600,500,"svg#num3");
 },
 function(err)
 {
   console.log(err);
 })
 
-var drawGraph = function(data,width,height)
+var drawGraph = function(data,width,height,mySVG)
 {
   var screen = {
     width: width,
     height: height
   }
-  var svg = d3.select("svg")
+  var svg = d3.select(mySVG)
               .attr("width",screen.width)
               .attr("height",screen.height)
               .style("display","block")
