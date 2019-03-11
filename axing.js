@@ -2,22 +2,26 @@ var gradesP = d3.json("gradeData.json");
 
 gradesP.then(function(data)
 {
-  drawGraph(data);
+  drawGraph(data,500,400);
+  drawGraph(data,300,200);
+  drawGraph(data,600,500);
 },
 function(err)
 {
   console.log(err);
 })
 
-var drawGraph = function(data)
+var drawGraph = function(data,width,height)
 {
   var screen = {
-    width: 500,
-    height: 400
+    width: width,
+    height: height
   }
   var svg = d3.select("svg")
               .attr("width",screen.width)
               .attr("height",screen.height)
+              .style("display","block")
+
   var margins = {
     top:10,
     bottom:40,
@@ -56,7 +60,7 @@ students.selectAll("circle")
         .append("circle")
         .attr("cx",function(d,i){return xScale(i)})
         .attr("cy",function(d){return yScale(d)})
-        .attr("r",10)
+        .attr("r",(width/50))
  //The Legend...
 var legend = svg.append("g")
                 .classed("legend",true)
